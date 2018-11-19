@@ -2,14 +2,18 @@ package com.company;
 
 public class HorseBarn {
     private Horse[] spaces;
+    public HorseBarn(Horse[] spaces)
+    {
+        this.spaces = spaces;
+    }
 
     public int findHorseSpace(String name){
         for(int i = 0;i<this.spaces.length;i++)
         {
-            if(this.spaces[i].equals(name))
-            {
+            if(this.spaces[i]!=null && name.equals(this.spaces[i].getName())) {
                 return i;
             }
+                return i;
         }
         return -1;
     }
@@ -17,7 +21,7 @@ public class HorseBarn {
     {
         for(int i = 0;i<this.spaces.length-1;i++)
         {
-            if(this.spaces[i].equals(null))
+            if(this.spaces[i] ==null)
             {
                 for(int x = i+1;x<this.spaces.length;x++)
                 {
